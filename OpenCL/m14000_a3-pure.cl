@@ -1068,129 +1068,127 @@ DECLSPEC void s2 (const u32 a1, const u32 a2, const u32 a3, const u32 a4, const 
     *out4 ^= x31;
 }
 
-DECLSPEC void s3 (const u32 a1, const u32 a2, const u32 a3, const u32 a4, const u32 a5, const u32 a6, PRIVATE_AS u32 *out1, PRIVATE_AS u32 *out2, PRIVATE_AS u32 *out3, PRIVATE_AS u32 *out4)
+DECLSPEC void s3 (const u32 b1, const u32 b2, const u32 b3, const u32 b4, const u32 b5, const u32 b6, PRIVATE_AS u32 *out1, PRIVATE_AS u32 *out2, PRIVATE_AS u32 *out3, PRIVATE_AS u32 *out4)
 {
-    u32 x44444444, x0F0FF0F0, x4F4FF4F4, x00FFFF00, x00AAAA00, x4FE55EF4;
-    u32 x3C3CC3C3, x3C3C0000, x7373F4F4, x0C840A00;
-    u32 x00005EF4, x00FF5EFF, x00555455, x3C699796;
-    u32 x000FF000, x55AA55AA, x26D9A15E, x2FDFAF5F, x2FD00F5F;
-    u32 x55AAFFAA, x28410014, x000000FF, x000000CC, x284100D8;
-    u32 x204100D0, x3C3CC3FF, x1C3CC32F, x4969967A;
-    u32 x4CC44CC4, x40C040C0, xC3C33C3C, x9669C396, xD6A98356;
-    u32 xD6E9C3D6, x4CEEEEC4, x9A072D12, x001A000B, x9A1F2D1B;
-    u32 x00, x01, x10, x11, x20, x21, x30, x31;
+  const u32 a1 = b5;
+  const u32 a2 = b4;
+  const u32 a3 = b3;
+  const u32 a4 = b2;
+  const u32 a5 = b6;
+  const u32 a6 = b1;
 
-    x44444444 = a1 & ~a2;
-    x0F0FF0F0 = a3 ^ a6;
-    x4F4FF4F4 = x44444444 | x0F0FF0F0;
-    x00FFFF00 = a4 ^ a6;
-    x00AAAA00 = x00FFFF00 & ~a1;
-    x4FE55EF4 = x4F4FF4F4 ^ x00AAAA00;
-
-    x3C3CC3C3 = a2 ^ x0F0FF0F0;
-    x3C3C0000 = x3C3CC3C3 & ~a6;
-    x7373F4F4 = x4F4FF4F4 ^ x3C3C0000;
-    x0C840A00 = x4FE55EF4 & ~x7373F4F4;
-
-    x00005EF4 = a6 & x4FE55EF4;
-    x00FF5EFF = a4 | x00005EF4;
-    x00555455 = a1 & x00FF5EFF;
-    x3C699796 = x3C3CC3C3 ^ x00555455;
-    x30 = x4FE55EF4 & ~a5;
-    x31 = x30 ^ x3C699796;
-    *out4 ^= x31;
-
-    x000FF000 = x0F0FF0F0 & x00FFFF00;
-    x55AA55AA = a1 ^ a4;
-    x26D9A15E = x7373F4F4 ^ x55AA55AA;
-    x2FDFAF5F = a3 | x26D9A15E;
-    x2FD00F5F = x2FDFAF5F & ~x000FF000;
-
-    x55AAFFAA = x00AAAA00 | x55AA55AA;
-    x28410014 = x3C699796 & ~x55AAFFAA;
-    x000000FF = a4 & a6;
-    x000000CC = x000000FF & ~a2;
-    x284100D8 = x28410014 ^ x000000CC;
-
-    x204100D0 = x7373F4F4 & x284100D8;
-    x3C3CC3FF = x3C3CC3C3 | x000000FF;
-    x1C3CC32F = x3C3CC3FF & ~x204100D0;
-    x4969967A = a1 ^ x1C3CC32F;
-    x10 = x2FD00F5F & a5;
-    x11 = x10 ^ x4969967A;
-    *out2 ^= x11;
-
-    x4CC44CC4 = x4FE55EF4 & ~a2;
-    x40C040C0 = x4CC44CC4 & ~a3;
-    xC3C33C3C = ~x3C3CC3C3;
-    x9669C396 = x55AAFFAA ^ xC3C33C3C;
-    xD6A98356 = x40C040C0 ^ x9669C396;
-    x00 = a5 & ~x0C840A00;
-    x01 = x00 ^ xD6A98356;
-    *out1 ^= x01;
-
-    xD6E9C3D6 = x40C040C0 | x9669C396;
-    x4CEEEEC4 = x00AAAA00 | x4CC44CC4;
-    x9A072D12 = xD6E9C3D6 ^ x4CEEEEC4;
-    x001A000B = a4 & ~x4FE55EF4;
-    x9A1F2D1B = x9A072D12 | x001A000B;
-    x20 = a5 & ~x284100D8;
-    x21 = x20 ^ x9A1F2D1B;
-    *out3 ^= x21;
+  u32 var6 = ~a5;
+  u32 var7 = var6 ^ a2;
+  u32 var8 = var7 & a5;
+  u32 var9 = var8 | a4;
+  u32 var10 = var6 ^ var9;
+  u32 var11 = var7 & a1;
+  u32 var12 = var10 ^ var11;
+  u32 var13 = a3 & var11;
+  u32 var14 = var13 | a2;
+  u32 var15 = ~var8;
+  u32 var16 = var15 | a4;
+  u32 var17 = var14 ^ var16;
+  u32 var18 = var17 & a6;
+  *out2 ^= var12 ^ var18;
+  u32 var20 = var17 | a1;
+  u32 var21 = var20 ^ a3;
+  u32 var22 = var11 | (var12 ^ var18);
+  u32 var23 = var22 & var16;
+  u32 var24 = var23 & a1;
+  u32 var25 = var21 ^ var24;
+  u32 var26 = var20 ^ var8;
+  u32 var27 = var26 & (var12 ^ var18);
+  u32 var28 = var27 | a6;
+  *out3 ^= var25 ^ var28;
+  u32 var30 = var7 ^ var24;
+  u32 var31 = var30 ^ var23;
+  u32 var32 = (var12 ^ var18) ^ var15;
+  u32 var33 = var32 & (var25 ^ var28);
+  u32 var34 = var33 & a3;
+  u32 var35 = var31 ^ var34;
+  u32 var36 = var35 & var32;
+  u32 var37 = var36 ^ var14;
+  u32 var38 = var9 & a1;
+  u32 var39 = var37 ^ var38;
+  u32 var40 = var39 & a6;
+  *out1 ^= var35 ^ var40;
+  u32 var42 = a1 | var18;
+  u32 var43 = var42 & var16;
+  u32 var44 = a6 ^ (var12 ^ var18);
+  u32 var45 = var44 & (var35 ^ var40);
+  u32 var46 = var45 & a3;
+  u32 var47 = var43 ^ var46;
+  u32 var48 = var27 | var31;
+  u32 var49 = var48 ^ var46;
+  u32 var50 = var11 & a6;
+  u32 var51 = var49 ^ var50;
+  u32 var52 = var51 | a5;
+  *out4 ^= var47 ^ var52;
 }
 
-DECLSPEC void s4 (const u32 a1, const u32 a2, const u32 a3, const u32 a4, const u32 a5, const u32 a6, PRIVATE_AS u32 *out1, PRIVATE_AS u32 *out2, PRIVATE_AS u32 *out3, PRIVATE_AS u32 *out4)
+DECLSPEC void s4  (const u32 b1, const u32 b2, const u32 b3, const u32 b4, const u32 b5, const u32 b6, PRIVATE_AS u32 *out1, PRIVATE_AS u32 *out2, PRIVATE_AS u32 *out3, PRIVATE_AS u32 *out4)
 {
-    u32 x5A5A5A5A, x0F0FF0F0;
-    u32 x33FF33FF, x33FFCC00, x0C0030F0, x0C0CC0C0, x0CF3C03F, x5EFBDA7F,
-        x52FBCA0F, x61C8F93C;
-    u32 x00C0C03C, x0F0F30C0, x3B92A366, x30908326, x3C90B3D6;
-    u32 x33CC33CC, x0C0CFFFF, x379E5C99, x04124C11, x56E9861E, xA91679E1;
-    u32 x9586CA37, x8402C833, x84C2C83F, xB35C94A6;
-    u32 x00, x01, x10, x11, x20, x21, x30, x31;
+  const u32 a1 = b5;
+  const u32 a2 = b4;
+  const u32 a3 = b3;
+  const u32 a4 = b2;
+  const u32 a5 = b6;
+  const u32 a6 = b1;
 
-    x5A5A5A5A = a1 ^ a3;
-    x0F0FF0F0 = a3 ^ a5;
-    x33FF33FF = a2 | a4;
-    x33FFCC00 = a5 ^ x33FF33FF;
-    x0C0030F0 = x0F0FF0F0 & ~x33FFCC00;
-    x0C0CC0C0 = x0F0FF0F0 & ~a2;
-    x0CF3C03F = a4 ^ x0C0CC0C0;
-    x5EFBDA7F = x5A5A5A5A | x0CF3C03F;
-    x52FBCA0F = x5EFBDA7F & ~x0C0030F0;
-    x61C8F93C = a2 ^ x52FBCA0F;
-
-    x00C0C03C = x0CF3C03F & x61C8F93C;
-    x0F0F30C0 = x0F0FF0F0 & ~x00C0C03C;
-    x3B92A366 = x5A5A5A5A ^ x61C8F93C;
-    x30908326 = x3B92A366 & ~x0F0F30C0;
-    x3C90B3D6 = x0C0030F0 ^ x30908326;
-
-    x33CC33CC = a2 ^ a4;
-    x0C0CFFFF = a5 | x0C0CC0C0;
-    x379E5C99 = x3B92A366 ^ x0C0CFFFF;
-    x04124C11 = x379E5C99 & ~x33CC33CC;
-    x56E9861E = x52FBCA0F ^ x04124C11;
-    x00 = a6 & ~x3C90B3D6;
-    x01 = x00 ^ x56E9861E;
-    *out1 ^= x01;
-
-    xA91679E1 = ~x56E9861E;
-    x10 = x3C90B3D6 & ~a6;
-    x11 = x10 ^ xA91679E1;
-    *out2 ^= x11;
-
-    x9586CA37 = x3C90B3D6 ^ xA91679E1;
-    x8402C833 = x9586CA37 & ~x33CC33CC;
-    x84C2C83F = x00C0C03C | x8402C833;
-    xB35C94A6 = x379E5C99 ^ x84C2C83F;
-    x20 = x61C8F93C | a6;
-    x21 = x20 ^ xB35C94A6;
-    *out3 ^= x21;
-
-    x30 = a6 & x61C8F93C;
-    x31 = x30 ^ xB35C94A6;
-    *out4 ^= x31;
+  u32 var6 = a4 ^ a1;
+  u32 var7 = var6 | a6;
+  u32 var8 = a6 | a4;
+  u32 var9 = var8 & a1;
+  u32 var10 = var9 | a3;
+  u32 var11 = var7 ^ var10;
+  u32 var12 = a4 ^ a3;
+  u32 var13 = var12 | var7;
+  u32 var14 = var13 & a2;
+  u32 var15 = var11 ^ var14;
+  u32 var16 = var10 ^ var6;
+  u32 var17 = var16 & var12;
+  u32 var18 = var10 | a6;
+  u32 var19 = var17 ^ var18;
+  u32 var20 = var13 | a2;
+  u32 var21 = var19 ^ var20;
+  u32 var22 = var21 | a5;
+  *out3 ^= var15 ^ var22;
+  u32 var24 = var10 | var21;
+  u32 var25 = var24 ^ var8;
+  u32 var26 = var22 & a6;
+  u32 var27 = var25 ^ var26;
+  u32 var28 = var18 | a2;
+  u32 var29 = var27 ^ var28;
+  u32 var30 = a3 | var25;
+  u32 var31 = var30 ^ var22;
+  u32 var32 = a1 ^ var21;
+  u32 var33 = var32 ^ var27;
+  u32 var34 = var33 & a2;
+  u32 var35 = var31 ^ var34;
+  u32 var36 = var35 & a5;
+  *out4 ^= var29 ^ var36;
+  u32 var38 = var6 ^ var28;
+  u32 var39 = var38 ^ var34;
+  u32 var40 = var25 | a6;
+  u32 var41 = var40 ^ var34;
+  u32 var42 = var41 | a5;
+  u32 var43 = var39 ^ var42;
+  u32 var44 = ~var18;
+  u32 var45 = var44 | a3;
+  u32 var46 = a5 ^ var45;
+  u32 var47 = var46 | a4;
+  *out2 ^= var43 ^ var47;
+  u32 var49 = var18 & var11;
+  u32 var50 = var49 ^ var43;
+  u32 var51 = var6 ^ var14;
+  u32 var52 = var51 | var10;
+  u32 var53 = var52 | a5;
+  u32 var54 = var50 ^ var53;
+  u32 var55 = var36 ^ (var43 ^ var47);
+  u32 var56 = var55 ^ var9;
+  u32 var57 = var56 & a3;
+  *out1 ^= var54 ^ var57;
 }
 
 DECLSPEC void s5 (const u32 a1, const u32 a2, const u32 a3, const u32 a4, const u32 a5, const u32 a6, PRIVATE_AS u32 *out1, PRIVATE_AS u32 *out2, PRIVATE_AS u32 *out3, PRIVATE_AS u32 *out4)
@@ -1410,68 +1408,63 @@ DECLSPEC void s7 (const u32 a1, const u32 a2, const u32 a3, const u32 a4, const 
     *out2 ^= x11;
 }
 
-DECLSPEC void s8 (const u32 a1, const u32 a2, const u32 a3, const u32 a4, const u32 a5, const u32 a6, PRIVATE_AS u32 *out1, PRIVATE_AS u32 *out2, PRIVATE_AS u32 *out3, PRIVATE_AS u32 *out4)
+DECLSPEC void s8  (const u32 b1, const u32 b2, const u32 b3, const u32 b4, const u32 b5, const u32 b6, PRIVATE_AS u32 *out1, PRIVATE_AS u32 *out2, PRIVATE_AS u32 *out3, PRIVATE_AS u32 *out4)
 {
-    u32 x0C0C0C0C, x0000F0F0, x00FFF00F, x00555005, x00515001;
-    u32 x33000330, x77555775, x30303030, x3030CFCF, x30104745, x30555745;
-    u32 xFF000FF0, xCF1048B5, x080A080A, xC71A40BF, xCB164CB3;
-    u32 x9E4319E6, x000019E6, xF429738C, xF4296A6A, xC729695A;
-    u32 xC47C3D2F, xF77F3F3F, x9E43E619, x693CD926;
-    u32 xF719A695, xF4FF73FF, x03E6D56A, x56B3803F;
-    u32 xF700A600, x61008000, x03B7856B, x62B7056B;
-    u32 x00, x01, x10, x11, x20, x21, x30, x31;
+  const u32 a1 = b5;
+  const u32 a2 = b4;
+  const u32 a3 = b3;
+  const u32 a4 = b2;
+  const u32 a5 = b6;
+  const u32 a6 = b1;
 
-    x0C0C0C0C = a3 & ~a2;
-    x0000F0F0 = a5 & ~a3;
-    x00FFF00F = a4 ^ x0000F0F0;
-    x00555005 = a1 & x00FFF00F;
-    x00515001 = x00555005 & ~x0C0C0C0C;
-
-    x33000330 = a2 & ~x00FFF00F;
-    x77555775 = a1 | x33000330;
-    x30303030 = a2 & ~a3;
-    x3030CFCF = a5 ^ x30303030;
-    x30104745 = x77555775 & x3030CFCF;
-    x30555745 = x00555005 | x30104745;
-
-    xFF000FF0 = ~x00FFF00F;
-    xCF1048B5 = x30104745 ^ xFF000FF0;
-    x080A080A = a3 & ~x77555775;
-    xC71A40BF = xCF1048B5 ^ x080A080A;
-    xCB164CB3 = x0C0C0C0C ^ xC71A40BF;
-    x10 = x00515001 | a6;
-    x11 = x10 ^ xCB164CB3;
-    *out2 ^= x11;
-
-    x9E4319E6 = a1 ^ xCB164CB3;
-    x000019E6 = a5 & x9E4319E6;
-    xF429738C = a2 ^ xC71A40BF;
-    xF4296A6A = x000019E6 ^ xF429738C;
-    xC729695A = x33000330 ^ xF4296A6A;
-
-    xC47C3D2F = x30555745 ^ xF4296A6A;
-    xF77F3F3F = a2 | xC47C3D2F;
-    x9E43E619 = a5 ^ x9E4319E6;
-    x693CD926 = xF77F3F3F ^ x9E43E619;
-    x20 = x30555745 & a6;
-    x21 = x20 ^ x693CD926;
-    *out3 ^= x21;
-
-    xF719A695 = x3030CFCF ^ xC729695A;
-    xF4FF73FF = a4 | xF429738C;
-    x03E6D56A = xF719A695 ^ xF4FF73FF;
-    x56B3803F = a1 ^ x03E6D56A;
-    x30 = x56B3803F & a6;
-    x31 = x30 ^ xC729695A;
-    *out4 ^= x31;
-
-    xF700A600 = xF719A695 & ~a4;
-    x61008000 = x693CD926 & xF700A600;
-    x03B7856B = x00515001 ^ x03E6D56A;
-    x62B7056B = x61008000 ^ x03B7856B;
-    x00 = x62B7056B | a6;
-    x01 = x00 ^ xC729695A;
-    *out1 ^= x01;
+  u32 var6 = a2 ^ a6;
+  u32 var7 = var6 | a4;
+  u32 var8 = a4 & a1;
+  u32 var9 = var7 ^ var8;
+  u32 var10 = ~a4;
+  u32 var11 = var10 | a2;
+  u32 var12 = a1 ^ var11;
+  u32 var13 = var6 ^ a4;
+  u32 var14 = var13 & var12;
+  u32 var15 = var14 | a6;
+  u32 var16 = var12 ^ var15;
+  u32 var17 = var16 & a5;
+  *out4 ^= var9 ^ var17;
+  u32 var19 = a3 | var6;
+  u32 var20 = var19 & var12;
+  u32 var21 = var17 | var14;
+  u32 var22 = var21 ^ var19;
+  u32 var23 = var22 & a2;
+  u32 var24 = var20 ^ var23;
+  u32 var25 = var21 & var24;
+  u32 var26 = var25 ^ var10;
+  u32 var27 = (var9 ^ var17) | a2;
+  u32 var28 = var26 ^ var27;
+  u32 var29 = var28 & a5;
+  *out2 ^= var24 ^ var29;
+  u32 var31 = var26 & var7;
+  u32 var32 = var31 ^ var24;
+  u32 var33 = var32 & a6;
+  u32 var34 = var12 ^ var33;
+  u32 var35 = var9 & var24;
+  u32 var36 = var35 ^ a1;
+  u32 var37 = var33 ^ var22;
+  u32 var38 = var37 & (var9 ^ var17);
+  u32 var39 = var38 & a3;
+  u32 var40 = var36 ^ var39;
+  u32 var41 = var40 & a5;
+  *out1 ^= var34 ^ var41;
+  u32 var43 = var10 ^ a5;
+  u32 var44 = var43 ^ (var24 ^ var29);
+  u32 var45 = var44 ^ a3;
+  u32 var46 = var35 ^ var6;
+  u32 var47 = var46 ^ (var34 ^ var41);
+  u32 var48 = var47 & a2;
+  u32 var49 = var45 ^ var48;
+  u32 var50 = var13 ^ (var34 ^ var41);
+  u32 var51 = var50 | var44;
+  u32 var52 = var51 | a1;
+  *out3 ^= var49 ^ var52;
 }
 
 #endif
